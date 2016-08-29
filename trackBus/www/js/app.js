@@ -1,11 +1,6 @@
-// Ionic Starter App
 
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-// 'starter.services' is found in services.js
-// 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'uiGmapgoogle-maps'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -32,14 +27,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   $stateProvider
 
   // setup an abstract state for the tabs directive
-    .state('tab', {
+  .state('tab', {
     url: '/tab',
     abstract: true,
     templateUrl: 'templates/tabs.html'
   })
 
   // Each tab has its own nav history stack:
-
   .state('tab.map', {
   url: '/map',
   views: {
@@ -50,17 +44,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
-  .state('tab.map-lines', {
-      url: '/map-lines',
+  .state('tab.tracker', {
+      url: '/tracker',
       views: {
-        'tab-map-lines': {
-          templateUrl: 'templates/tab-map-lines.html',
-          controller: 'ChatsCtrl'
+        'tab-tracker': {
+          templateUrl: 'templates/tab-tracker.html',
+          controller: 'MapController'
         }
       }
     });
 
-  
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/map');

@@ -5,19 +5,17 @@ navigation history that also transitions its views in and out.
 -->
 <ion-tabs class="tabs-icon-top tabs-color-active-positive">
 
-  <!-- Dashboard Tab -->
+  <!-- Lines Tab -->
   <ion-tab title="Status" icon-off="ion-android-bus" icon-on="ion-android-bus" href="#/tab/map">
     <ion-nav-view name="tab-map"></ion-nav-view>
   </ion-tab>
-
-  <!-- Chats Tab -->
-  <ion-tab title="Acompanhar viagem" icon-off="ion-ios-play" icon-on="ion-ios-play" href="#/tab/chats">
-    <ion-nav-view name="tab-map-lines"></ion-nav-view>
+  <!-- Tracker Tab -->
+  <ion-tab title="Acompanhar viagem" icon-off="ion-ios-play" icon-on="ion-ios-play" href="#/tab/tracker">
+    <ion-nav-view name="tab-tracker"></ion-nav-view>
   </ion-tab>
 
   <ion-footer-bar class="bar-dark">
-      <a ng-controller="MapController"  ng-click="centerOnMe()" class="button button-icon icon ion-android-locate">  Me encontre</a>
+      <a class="button button-icon icon ion-android-locate"> Me encontre</a>
   </ion-footer-bar>
-
 
 </ion-tabs>
